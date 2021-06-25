@@ -9,10 +9,12 @@
 </head>
 <body>
     @include("partials.errorsAlert")
-    <form action="{{ route('comics.store') }}" method="post">
+    <form action="{{ route('comics.update', $comic->id) }}" method="post">
         @csrf
 
-        <h1>INSERISCI IL NUOVO FUMETTO A CATALOGO</h1>
+        @method('PATCH')
+
+        <h1>MODIFICA UN FUMETTO A CATALOGO O <a href="{{ route('comics.index') }}">TORNA ALLA HOME</a></h1>
         <div>
             <label for="title">Titolo</label>
             <input type="text" name="title" id="title">

@@ -14,13 +14,14 @@
         @foreach($comics as $comic)
 
         <div class="card">
-
             <img src="{{$comic->img}}" alt="">
+            <h2><a href="{{ route('comics.edit', $comic->id) }}">Modifica</a></h2>
             <h2> TITOLO : {{$comic->title}}</h2>
             <h2>PREZZO : {{$comic->price}}</h2>
             <h2>SERIE : {{$comic->series}}</h2>
             <h2>DATA USCITA : {{$comic->sale_date}}</h2>
             <h2>DESCRIZIONE : {{$comic->description}}</h2>
+            @include('partials.deleteBtn', ["id"=> $comic->id])
         </div>
 
         @endforeach
