@@ -1,5 +1,5 @@
 @if(count($errors->all()) > 0)
-<div class="alert alert-danger">
+<div >
 
   <ul>
     @foreach($errors->all() as $error)
